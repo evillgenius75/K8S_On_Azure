@@ -6,6 +6,6 @@ The series will be posted on my Medium Blog as well as YouTube:
 Medium: https://medium.com/@evillgenius
 YouTube: http://bit.ly/2T0BUJX
 
-Episode 1 - Azure Networking
+[Episode 1 - Azure Networking](./episode1/)
 
 
