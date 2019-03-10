@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kuar-svc-int
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+  labels:
+    app: kuar-svc-int
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP
+    name: kuar-http
+  selector:
+    app: kuar-svc-int
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kuar-svc-int
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: kuar-svc-int
+    spec:
+      containers:
+      - name: kuar-svc-int
+        image: evillgenius/kuar:1
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 200m
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 200Mi
