@@ -7,5 +7,6 @@ Medium: https://medium.com/@evillgenius
 YouTube: http://bit.ly/2T0BUJX
 
 [Episode 1 - Azure Networking](./episode1/)
+[Episode 2 - AKS Ingress & Egress](./episode2/)
 
 
